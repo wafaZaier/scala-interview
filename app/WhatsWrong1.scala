@@ -12,6 +12,9 @@ object WhatsWrong1 {
     override val city = "Paris"
   }
 
-  Supporter.city //What does this print ?
-  Supporter.support //What does this print and why ? How to fix it ?
+  Supporter.city // this print "Paris"
+  Supporter.support // this print  "Ici c'est null"  city = null because it is not initialized in the trait.
+                    // and  "support" is a "val" so it evaluates when defined.
+                    // so we should use "def": evaluates on every call
+                    // def support: String = s"Ici c'est $city !" => it print "Ici c'est Paris"
 }

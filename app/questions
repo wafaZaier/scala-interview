@@ -1,12 +1,29 @@
 
 1) Explain REST and RESTful
+ => REST(REpresentational State Transfer) is a software architectural style that is used foR creating Web services,
+ RESTful describes using that paradigm: the Web services that conform to this architectural style are called RESTful Web Service.
 
 2) Explain the architectural style for the creation of a web API (client server communication, formatting language, etc.)
+ => The architectural style for the creation of a web API called RESTful API is an application program interface that
+ allow the requesting systems  to access and manipulate textual representations of Web resources by using a uniform and predefined set of stateless operations ( via HTTP requests).
+ The communication between the client and the server must not depend on any context coming from the server. Thus, each request must contain all the information
+  necessary for its processing. This allows the client to process requests from multiple clients interchangeably across multiple server instances.
 
 3) Explain HTTP requests types when used with RESTful web (GET, PUT, POST, etc.)
 
+*GET : The GET method requests a representation of the specified resource. GET requests should only be used to retrieve data.
+*POST: he POST method is used to send an entity to the specified resource. This usually causes a state change or edge effects on the server.
+*PUT: The PUT method replaces all current representations of the resource targeted by the contents of the request.
+*PATCH: The PATCH method is used to apply partial changes to a resource.
+*DELETE: Removes all current representations of the target resource given by a URI.
+
 4) Explain the difference between stateless and stateful protocol. Which type of protocol is HTTP ?
+In a Stateless Protocol: no information about a transaction is maintained after a transaction is processed.
+In a Stateful Protocol: state information is kept even after a transaction has been processed.
+=> HTTP is stateless
 
 5) Explain the difference between a GET and a POST (like how are sent the parameters)
+POST: POST requests are never cached, supply additional data from the client (browser) to the server in the message body, have no restrictions on data length
+GET: GET requests can be cached, include all required data in the URL and  have length restrictions
 
 6) You can’t work out how to solve a coding problem. What do you do to find the answer?

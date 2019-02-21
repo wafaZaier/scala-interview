@@ -17,8 +17,8 @@ class WhatsWrong3 extends Actor {
   var internalState = "internal state"
 
   def receive: Receive = {
-    case "a query" => {
-      val requestF: Future[String] = queryAsyncServer()
+    case text: String => {
+      val requestF: Future[String] = queryAsyncServer(text)
       requestF.onComplete {
         case Success(r) => handleResponse(r)
         case Failure(e) => e.printStackTrace()
@@ -26,7 +26,7 @@ class WhatsWrong3 extends Actor {
     }
   }
 
-  def handleResponse(r: String) = ??? // mutate internal state
+  def handleResponse(r: String) =  internalState = r // mutate internal state
 
-  def queryAsyncServer(): Future[String] = ???
+  def queryAsyncServer(text: String): Future[String] = Future(text)
 }
